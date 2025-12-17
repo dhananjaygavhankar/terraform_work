@@ -19,7 +19,7 @@ stages:
           
           displayName: Tflint
           inputs:
-            script: 'tflint --recursive -f json > rest1.txt'
+            script: 'tflint --recursive -f json > test.xml'
             workingDirectory: '.'
           continueOnError: true
         - task: PublishTestResults@2
