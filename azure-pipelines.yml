@@ -16,7 +16,13 @@ stages:
             version: 'v1.26.0'
             dir: '.'
         - task: CmdLine@2
+          
           displayName: Tflint
           inputs:
-            script: 'tflint --recursive'
+            script: 'tflint --recursive junit > test.xml'
             workingDirectory: '.'
+          continueOnError: true
+        - task: PublishTestResults@2
+          inputs:
+            testResultsFormat: 'JUnit'
+            testResultsFiles: 'test.xml'
