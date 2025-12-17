@@ -11,6 +11,12 @@ stages:
       - job:
         steps:
         - task: tfsec@1
+          displayName: Tfsec
           inputs:
             version: 'v1.26.0'
             dir: '.'
+        - task: CmdLine@2
+          displayName: Tflint
+          inputs:
+            script: 'tflint --recursive'
+            workingDirectory: '.'
