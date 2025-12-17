@@ -20,7 +20,7 @@ stages:
           displayName: Tflint
           inputs:
             script: 'tflint --recursive -f json > test.xml'
-            workingDirectory: '.'
+            workingDirectory: '$(System.DefaultWorkingDirectory)'
           continueOnError: true
         - task: PublishTestResults@2
           inputs:
