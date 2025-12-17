@@ -6,10 +6,11 @@ pool:
   name: Pradip_learning
 
 stages:
-  - stage: tflint
+  - stage: tfsec
     jobs:
       - job:
         steps:
         - task: tfsec@1
           inputs:
             version: 'v1.26.0'
+            dir: '.'
