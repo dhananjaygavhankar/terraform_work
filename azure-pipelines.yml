@@ -10,8 +10,6 @@ stages:
     jobs:
       - job:
         steps:
-          - 
-        - task: PowerShell@2
+        - task: tfsec@1
           inputs:
-            targetType: 'inline'
-            script: 'tflint.exe'
+            version: 'v1.26.0'
