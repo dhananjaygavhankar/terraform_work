@@ -26,3 +26,10 @@ stages:
           inputs:
             testResultsFormat: 'JUnit'
             testResultsFiles: 'test.xml'
+        - task: CmdLine@2
+          
+          displayName: allexecution
+          inputs:
+            script: '.\run_all_folders_with_provider.ps1'
+            workingDirectory: '$(System.DefaultWorkingDirectory)'
+          continueOnError: true
