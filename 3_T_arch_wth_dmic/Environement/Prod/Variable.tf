@@ -54,3 +54,5 @@ variable "Project" {
     })
   })
 }
+
+variable "SQL_server" {}

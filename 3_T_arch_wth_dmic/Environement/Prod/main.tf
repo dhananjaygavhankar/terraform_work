@@ -240,6 +240,13 @@ module "application_gateway" {
   backend_set        = var.Project.application_gateway.backend_set
 }
 
+module "SQL_server" {
+  source     = "../../module/azurerm_SQL_server"
+  SQL_server = var.SQL_server
+  rg_nam     = var.Project.resource_group.rg1[0]
+  locatio    = var.Project.resource_group.Location
+}
+
 
 
 # #============================================================================================
