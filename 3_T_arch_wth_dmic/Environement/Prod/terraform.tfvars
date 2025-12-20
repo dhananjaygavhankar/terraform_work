@@ -13,7 +13,7 @@ Project = {
     vnet_name = "4_each_vnet"
     address   = ["10.0.0.0/16"]
     dns       = ["10.0.0.4", "10.0.0.5"]
-    #_____***_______add your sunbet_______****___________
+#_____***_______add your sunbet_______****___________
     subnets = {
       s1 = {
         name           = "Frontend"
@@ -65,7 +65,7 @@ Project = {
   virtual_machine = {
     Frontend = {
       name           = "Frontend"
-      size           = "Standard_F2"
+      size           = "Standard_D2ls_v5"
       admin_username = "adminuser"
       admin_password = "Admin@12345678"
       script_name    = ".nginx.sh"
@@ -83,7 +83,7 @@ Project = {
     }
     Backend = {
       name           = "Backend"
-      size           = "Standard_F2"
+      size           = "Standard_D2ls_v5"
       admin_username = "adminuser"
       admin_password = "Admin@12345678"
       script_name    = ".nginx.sh"
