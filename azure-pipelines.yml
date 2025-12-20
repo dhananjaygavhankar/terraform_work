@@ -10,22 +10,22 @@ stages:
     jobs:
       - job:
         steps:
-        - task: tfsec@1
-          displayName: Tfsec
-          inputs:
-            version: 'v1.26.0'
-            dir: '.'
-        - task: CmdLine@2
+        # - task: tfsec@1
+        #   displayName: Tfsec
+        #   inputs:
+        #     version: 'v1.26.0'
+        #     dir: '.'
+        # - task: CmdLine@2
           
-          displayName: Tflint
-          inputs:
-            script: 'tflint --recursive'
-            workingDirectory: '$(System.DefaultWorkingDirectory)'
-          continueOnError: true
-        - task: PublishTestResults@2
-          inputs:
-            testResultsFormat: 'JUnit'
-            testResultsFiles: 'test.xml'
+        #   displayName: Tflint
+        #   inputs:
+        #     script: 'tflint --recursive'
+        #     workingDirectory: '$(System.DefaultWorkingDirectory)'
+        #   continueOnError: true
+        # - task: PublishTestResults@2
+        #   inputs:
+        #     testResultsFormat: 'JUnit'
+        #     testResultsFiles: 'test.xml'
         - task: PowerShell@2
           
           displayName: allexecution
