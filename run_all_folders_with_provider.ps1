@@ -32,7 +32,12 @@ function Run-Terraform {
 
         # Select or create the workspace
         Write-Host "Selecting or creating workspace: $environment" -ForegroundColor Yellow
-        terraform workspace select $environment 2>$null || terraform workspace new $environment
+        try {
+            terraform workspace select $environment 2>$null
+        } catch {
+            terraform workspace new $environment
+            terraform workspace select $environment
+        }
 
         # Plan Terraform
         Write-Host "Running 'terraform plan'..." -ForegroundColor Yellow
